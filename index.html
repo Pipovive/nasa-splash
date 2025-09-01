@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Splash NASA</title>
+  <style>
+    :root {
+      --vh: 1vh;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at center, #000 70%, #0a0a1a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100dvh;
+      height: calc(var(--vh, 1vh) * 100);
+      overflow: hidden;
+      position: relative;
+      font-family: sans-serif;
+    }
+
+    /* Logo */
+    #logo {
+      width: 60%;
+      max-width: 350px;
+      opacity: 0;
+      animation: zoomFade 3s ease forwards;
+      z-index: 2;
+    }
+
+    /* Splash */
+    #splash {
+      position: absolute;
+      left: 50%;
+      bottom: -10%;
+      transform: translateX(-50%) rotate(90deg);
+      width: 73%;
+      max-width: 400px;
+      opacity: 0.9;
+      z-index: 1;
+      animation: floatUp 6s ease-in-out infinite alternate;
+    }
+
+    /* Background stars */
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+
+    /* Animations */
+    @keyframes zoomFade {
+      0%   { transform: scale(0.7); opacity: 0; }
+      50%  { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1);   opacity: 1; }
+    }
+
+    /* @keyframes floatUp {
+      from { transform: translateX(-50%) translateY(5%) rotate(90deg); }
+      to   { transform: translateX(-50%) translateY(-5%) rotate(90deg); }
+    } */
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50%      { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Stars for background -->
+  <div class="star" style="top:10%; left:20%;"></div>
+  <div class="star" style="top:30%; left:70%;"></div>
+  <div class="star" style="top:60%; left:40%;"></div>
+  <div class="star" style="top:80%; left:80%;"></div>
+  
+  <!-- Main content -->
+  <img id="logo" src="Logo.png" alt="NASA logo">
+  <img id="splash" src="Splash.png" alt="Imagen splash de fondo">
+
+  <script>
+    function setVh() {
+      document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+    }
+    setVh();
+    window.addEventListener('resize', setVh);
+  </script>
+</body>
+</html>

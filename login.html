@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Splash NASA</title>
+  <style>
+    :root {
+      --vh: 1vh;
+    }
+
+    body {
+        margin: 0;
+        background-color: black;
+        display: grid;
+        place-items: center; /* centra el logo */
+        min-height: 100dvh; 
+        height: calc(var(--vh, 1vh) * 100);
+        position: relative; /* necesario para posicionar el splash */
+        overflow: hidden;   /* evita scroll por el splash */
+    }
+
+    #logo {
+        width: 330px;
+        opacity: 0;
+        animation: zoomFade 3s ease forwards;
+        z-index: 2; /* encima del splash */
+    }
+
+    #splash {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%) translateY(-30%) rotate(90deg);
+        width: 100%;
+        z-index: 1; /* detrás del logo */
+    }
+    
+    .formulario {
+        display: grid;
+        height: 500px;
+        width: 100%;
+        background-color: gray;
+        z-index: 3;
+        gap: 50px;
+        
+    }
+
+    @keyframes zoomFade {
+      0%   { transform: scale(0.7); opacity: 0; }
+      50%  { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1);   opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <img id="logo" src="Logo.png" alt="NASA logo">
+  <img id="splash" src="splash2.png" alt="Imagen splash de fondo">
+  <div id="square">
+    <form class="formulario">
+        <input type="text" placeholder="Nombre o Gmail:">
+        <input type="text" placeholder="Contraseña:">
+        <a>Olvidé mi Contraseña</a>
+        <button>Login</button>
+        <button>Crear Cuenta</button>
+    </form>
+  </div>
+
+
+  <script>
+    function setVh() {
+      document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+    }
+    setVh();
+    window.addEventListener('resize', setVh);
+  </script>
+</body>
+</html>
