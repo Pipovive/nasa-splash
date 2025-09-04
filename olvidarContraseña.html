@@ -74,9 +74,12 @@
       color: #000;
     }
 
+    .login-container p {
+      color: #000;
+    }
+
     .login-container img {
       width: 250px;
-      margin-bottom: 30px;
     }
 
 
@@ -186,18 +189,25 @@
 
   <!-- Login -->
   <div class="login-container">
-    <h2>LOGIN</h2>
     <form>
       <img src="Logoblack.png">
-      <input type="text" placeholder="Usuario" id="inputStyle" required>
-      <input type="password" placeholder="Contraseña"  id="inputStyle" required>
-      <a href="olvidarContraseña.html">Olvide mi Contraseña</a>
+      <h2>¿Olvidates tu Contraseña?</h2>
+      <p>No te preocupes, a todos se nos olvida. Ingresa tu correo y te enviaremos un enlace para restablecer tu contraseña</p>
+      <input type="email" placeholder="Correo"  id="inputStyle" required>
       <div id="containButtons">
-        <button id="button1" type="submit">Ingresar</button>
-        <button id="button2" type="submit">Crear Cuenta</button>
+        <button id="button1" type="submit">Volver</button>
+        <button id="button2" type="submit">Enviar</button>
       </div>
     </form>
   </div>
+  
+  <script>
+    const enviar = document.getElementById('button1')
+
+    enviar.addEventListener("click" , function() {
+        window.location.href ="login.html"
+    })
+  </script>
 </body>
 </html>
 
