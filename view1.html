@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login NASA</title>
+  <style>
+    h2 {
+        font-family: Helvetica, sans-serif;
+        font-style: normal;
+    }
+
+    p {
+        font-family: Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      background: radial-gradient(ellipse at center, #000 70%, #1a1a49 100%);
+      color: white;
+    }
+
+    /* Fondo con ondas */
+    .waves {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      width: 200%;
+      height: 20%;
+      background: white;
+      opacity: 0.9;
+      border-radius: 100% 50%;
+      animation: moveWave 6s linear infinite;
+    }
+
+    .wave:nth-child(2) {
+      bottom: 5%;
+      opacity: 0.7;
+      animation-duration: 8s;
+    }
+
+    .wave:nth-child(3) {
+      bottom: 10%;
+      opacity: 0.5;
+      animation-duration: 10s;
+    }
+
+    @keyframes moveWave {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Caja login */
+    .login-container {
+      position: relative;
+      margin-top: 100px;
+      z-index: 1;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+      width: 100%;
+      height: 85%;
+      text-align: center;
+      backdrop-filter: blur(6px);
+    } 
+
+    .login-container h2 {
+      color: #000;
+    }
+
+    .login-container p {
+      color: #000;
+    }
+
+  
+
+    #imagenDia {
+        width: 250px;
+        border-radius: 15px;
+    }
+
+    .login-container input {
+      width: 240px;
+      padding: 0.7rem;
+      border-radius: 8px;
+      outline: none;
+      margin-bottom: 20px;
+     
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 0.8rem;
+      background: #000;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-container a {
+      font-size: 14px;
+      margin-left: 130px;
+      color: #5a5a5a;
+      
+    }
+    
+    #containButtons {
+      margin-top: 5px;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+    }
+
+    #containButtons button {
+      grid-row: 1;
+    }
+    
+    .header {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+      #logoNasa {
+        position: absolute;
+        z-index: 2;
+        width: 110px;
+    }
+    
+
+    /* stars */
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50%      { opacity: 1; }
+    }
+    
+    .aparecer {
+      animation: twinkle 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0%   { opacity: 0; transform: scale(0.98); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    body {
+      opacity: 0; /* Oculto al inicio */
+      animation: fadeIn 1.5s ease forwards; /* se activa al cargar */
+}
+
+  </style>
+</head>
+<body onload="alcargar()">
+  <div id="header">
+    <img src="Logo.png" alt="logo de la NASA" id="logoNasa" style="top:3%; left:74%;">
+  </div>
+  <div class="star" style="top:5%; left:20%;"></div>
+  <div class="star" style="top:7%; left:70%;"></div>
+  <div class="star" style="top:8%; left:40%;"></div>
+  <div class="star" style="top:9%; left:90%;"></div>
+
+  <!-- Login -->
+ 
+  <div class="login-container">
+    <h2>¿Olvidates tu Contraseña?</h2>
+      <img src="ejemplo1.jpg" alt="ejemplo1" id="imagenDia">
+      <h2>Titulo</h2>
+      <p>The Orbital Sciences Corporation 
+        Antares rocket is seen as it launches 
+        from Pad-0A of the Mid-Atlantic Regional Spaceport (MARS) at the NASA Wallops Flight Facility in Virginia, Sunday, April 21, 2013. The test launch
+      </p> 
+  </div>
+  
+  <script>
+    const enviar = document.getElementById('button1')
+
+    enviar.addEventListener("click" , function() {
+        window.location.href ="login.html"
+    })
+  </script>
+</body>
+</html>
+
