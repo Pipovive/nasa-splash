@@ -169,7 +169,7 @@
 
   </style>
 </head>
-<body onload="alcargar()">
+<body>
 
   <div class="star" style="top:10%; left:20%;"></div>
   <div class="star" style="top:30%; left:70%;"></div>
@@ -189,8 +189,8 @@
     <h2>LOGIN</h2>
     <form>
       <img src="Logoblack.png">
-      <input type="text" placeholder="Usuario" id="inputStyle" required>
-      <input type="password" placeholder="Contraseña"  id="inputStyle" required>
+      <input type="text" placeholder="Usuario" id="inputStyle" >
+      <input type="password" placeholder="Contraseña"  id="inputStyle" >
       <a href="olvidarContraseña.html">Olvide mi Contraseña</a>
       <div id="containButtons">
         <button id="button1" type="submit">Ingresar</button>
@@ -198,6 +198,13 @@
       </div>
     </form>
   </div>
+  <script>
+    const enviar = document.getElementById('button1')
+
+    enviar.addEventListener("click" , function() {
+        window.location.href ="view1.html"
+    })
+  </script>
 </body>
 </html>
 
