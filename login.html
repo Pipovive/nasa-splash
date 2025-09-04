@@ -153,9 +153,23 @@
       50%      { opacity: 1; }
     }
     
+    .aparecer {
+      animation: twinkle 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0%   { opacity: 0; transform: scale(0.98); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    body {
+      opacity: 0; /* Oculto al inicio */
+      animation: fadeIn 1.5s ease forwards; /* se activa al cargar */
+}
+
   </style>
 </head>
-<body>
+<body onload="alcargar()">
 
   <div class="star" style="top:10%; left:20%;"></div>
   <div class="star" style="top:30%; left:70%;"></div>
@@ -169,6 +183,7 @@
     <div class="wave"></div>
   </div> -->
 
+
   <!-- Login -->
   <div class="login-container">
     <h2>LOGIN</h2>
@@ -181,7 +196,6 @@
         <button id="button1" type="submit">Ingresar</button>
         <button id="button2" type="submit">Crear Cuenta</button>
       </div>
-      
     </form>
   </div>
 </body>
