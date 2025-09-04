@@ -65,7 +65,7 @@
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(255,255,255,0.3);
       width: 270px;
-      height: 350px;
+      height: 360px;
       text-align: center;
       backdrop-filter: blur(6px);
     }
@@ -105,9 +105,11 @@
       font-size: 14px;
       margin-left: 130px;
       color: #5a5a5a;
+      
     }
     
     #containButtons {
+      margin-top: 5px;
       display: grid;
       grid-template-rows: 1fr 1fr;
       gap: 20px;
@@ -133,16 +135,39 @@
       outline: 2px solid #fff;
       outline-offset: 2px;
     }
+
+    /* stars */
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50%      { opacity: 1; }
+    }
     
   </style>
 </head>
 <body>
+
+  <div class="star" style="top:10%; left:20%;"></div>
+  <div class="star" style="top:30%; left:70%;"></div>
+  <div class="star" style="top:60%; left:40%;"></div>
+  <div class="star" style="top:80%; left:80%;"></div>
+
   <!-- Ondas -->
-  <div class="waves">
+  <!-- <div class="waves">
     <div class="wave"></div>
     <div class="wave"></div>
     <div class="wave"></div>
-  </div>
+  </div> -->
 
   <!-- Login -->
   <div class="login-container">
@@ -151,11 +176,12 @@
       <img src="Logoblack.png">
       <input type="text" placeholder="Usuario" id="inputStyle" required>
       <input type="password" placeholder="Contraseña"  id="inputStyle" required>
+      <a href="#">Olvide mi Contraseña</a>
       <div id="containButtons">
         <button id="button1" type="submit">Ingresar</button>
         <button id="button2" type="submit">Crear Cuenta</button>
       </div>
-      <a href="#">Olvide mi Contraseña</a>
+      
     </form>
   </div>
 </body>
