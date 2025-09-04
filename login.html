@@ -64,47 +64,76 @@
       padding: 2rem;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(255,255,255,0.3);
-      width: 300px;
+      width: 270px;
+      height: 350px;
       text-align: center;
       backdrop-filter: blur(6px);
     }
 
     .login-container h2 {
-      margin-bottom: 1.5rem;
       color: #000;
     }
 
+    .login-container img {
+      width: 250px;
+      margin-bottom: 30px;
+    }
+
+
     .login-container input {
-      width: 270px;
+      width: 240px;
       padding: 0.7rem;
       border-radius: 8px;
       outline: none;
       margin-bottom: 20px;
      
     }
-  
+
     .login-container button {
       width: 100%;
       padding: 0.8rem;
-      background: #1a73e8;
+      background: #000;
       border: none;
       border-radius: 8px;
       color: white;
       font-weight: bold;
       cursor: pointer;
       transition: background 0.3s ease;
-      margin-bottom: 20px;
     }
 
     .login-container a {
       font-size: 14px;
-      margin-left: 160px;
+      margin-left: 130px;
       color: #5a5a5a;
     }
-
-    .login-container button:hover {
-      background: #0f4bbd;
+    
+    #containButtons {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
     }
+
+    #containButtons button {
+      grid-row: 1;
+    }
+  
+
+    /* hover genérico (opcional) */
+    .login-container button:hover { background: #333; }
+
+    
+    #button1:hover { background: #E4002B; } 
+    #button2:hover { background: #0032A0; } 
+
+ 
+    .login-container button:active { transform: translateY(1px); }
+
+  
+    .login-container button:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+    
   </style>
 </head>
 <body>
@@ -117,12 +146,15 @@
 
   <!-- Login -->
   <div class="login-container">
-    <h2>Login NASA</h2>
+    <h2>LOGIN</h2>
     <form>
+      <img src="Logoblack.png">
       <input type="text" placeholder="Usuario" id="inputStyle" required>
       <input type="password" placeholder="Contraseña"  id="inputStyle" required>
-      
-      <button type="submit">Ingresar</button>
+      <div id="containButtons">
+        <button id="button1" type="submit">Ingresar</button>
+        <button id="button2" type="submit">Crear Cuenta</button>
+      </div>
       <a href="#">Olvide mi Contraseña</a>
     </form>
   </div>
