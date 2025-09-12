@@ -51,22 +51,25 @@
 
     /* ==== CARD ==== */
     .card {
-  position: absolute;
-  top: 130px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  max-width: 260px;
-  background: rgba(25,25,45,0.9);
-  border-radius: 20px;
-  padding: 12px;
-  cursor: grab;
-  box-shadow: 0 0 12px rgba(255,255,255,0.1);
-  touch-action: none;
+      position: absolute;
+      top: 120px; /* suficiente espacio arriba */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      max-width: 260px;
+      background: rgba(25,25,45,0.9);
+      border-radius: 20px;
+      padding: 12px;
+      cursor: grab;
+      box-shadow: 0 0 12px rgba(255,255,255,0.1);
+      touch-action: none;
 
-  /* Movimiento más notorio */
-    animation: floaty 10s ease-in-out infinite;
-  }
+      margin-bottom: 80px; /* deja espacio para el nav */
+      z-index: 1;          /* más bajo que el nav */
+
+    /* Movimiento más notorio */
+      animation: floaty 10s ease-in-out infinite;
+    }
 
     @keyframes floaty {
       0%   { transform: translateX(-50%) translateY(0)   rotate(-1deg); }
@@ -109,6 +112,7 @@
       position: fixed;
       bottom: 0;
       left: 0;
+      right: 0;  /* añade esto */
       width: 100%;
       display: flex;
       justify-content: space-around;
@@ -116,7 +120,7 @@
       background: #111;
       padding: 10px 0;
       border-top: 1px solid #333;
-      z-index: 10;
+      z-index: 9999; /* más alto que todo */
     }
     nav a {
       flex: 1;
