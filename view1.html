@@ -13,7 +13,8 @@
       background: radial-gradient(ellipse at center, #000 70%, #1a1a49 100%);
       color: white;
       font-family: 'Roboto', sans-serif;
-      overflow: hidden;
+      overflow-x: hidden; /* solo oculta scroll horizontal */
+      overflow-y: auto;   /* permite scroll vertical */
       opacity: 0;
       animation: fadeIn 1.5s ease forwards;
     }
